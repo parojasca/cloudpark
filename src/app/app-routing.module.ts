@@ -15,7 +15,8 @@ const routes: Routes = [
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
   },
-  { path: 'parque', loadChildren: './parque/parque.module#ParquePageModule' }
+  { path: 'parque', loadChildren: './parque/parque.module#ParquePageModule' },
+  { path: 'modal-bienvenido', loadChildren: './modal-bienvenido/modal-bienvenido.module#ModalBienvenidoPageModule' }
 ];
 
 @NgModule({

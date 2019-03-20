@@ -10,27 +10,25 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-list>
-        <ion-list-header>Single Selection</ion-list-header>
-      <ion-item>
-          <ion-label>Gender</ion-label>
-          <ion-select placeholder="Select One">
-            <ion-select-option value="f">Female</ion-select-option>
-            <ion-select-option value="m">Male</ion-select-option>
-          </ion-select>
-        </ion-item>
-      
-        <ion-item>
-          <ion-label>Hair Color</ion-label>
-          <ion-select value="brown" okText="Okay" cancelText="Dismiss">
-            <ion-select-option value="brown">Brown</ion-select-option>
-            <ion-select-option value="blonde">Blonde</ion-select-option>
-            <ion-select-option value="black">Black</ion-select-option>
-            <ion-select-option value="red">Red</ion-select-option>
-          </ion-select>
-        </ion-item>
-      
-      </ion-list>
+  
+
+  
+  
+  
+  <!-- Searchbar with a cancel button and custom cancel button text -->
+  <ion-searchbar showCancelButton cancelButtonText="Custom Cancel"
+  [(ngModel)]="localidad" (ionChange)="busquedalocalidad()">
+
+
+  </ion-searchbar>
+  <ion-list  class="list list-md hydrated" *ngFor="let par of parques; let i = index">
+    <div class="item-note" >
+      {{par.localidad}}
+    </div>
+
+ 
+    
+  </ion-list>
 
   
   
@@ -39,12 +37,12 @@
     <ion-fab vertical="bottom" horizontal="end" >
     <ion-fab-button>
       <ion-icon name="search"></ion-icon>
+      
     </ion-fab-button>
     <ion-fab-list side="start">
-        <ion-toolbar>
-            <ion-searchbar></ion-searchbar>
-          </ion-toolbar>
+      
           
     </ion-fab-list>
+    <ion-searchbar color="danger">assddsfsdfdfs</ion-searchbar>
   </ion-fab>
 </ion-footer>

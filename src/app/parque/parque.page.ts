@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { ModalBienvenidoPage } from '../modal-bienvenido/modal-bienvenido.page';
+  
 
 @Component({
   selector: 'app-parque',
@@ -7,9 +10,50 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParquePage implements OnInit {
 
-  constructor() { }
+  constructor(public modalController: ModalController) {}
 
-  ngOnInit() {
+   
+
+  async ngOnInit() {
+    const modal = await this.modalController.create({
+      component:ModalBienvenidoPage,
+      componentProps: { value: 123 }
+    });
+    return await modal.present();
   }
+locali:string;
 
+
+parques=[
+  {
+    localidad : "Engativa",
+    parque : "la clara",
+    
+  },
+
+  {
+    localidad : "Engativa",
+    parque : "Brasilia",
+    
+  },
+  {
+    localidad : "Chapinero",
+    parque : "Los Hippes",
+    
+  },
+  {
+    localidad : "Chapinero",
+    parque : "Lima",
+   
+  },
+  {
+    localidad : "Kennedy",
+    parque : "Caracas",
+    
+  },
+]
+
+async busquedalocalidad(){
+   
+  }
 }
