@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ModalBienvenidoPage } from '../modal-bienvenido/modal-bienvenido.page';
+import { AlertController } from '@ionic/angular';
   
 
 @Component({
@@ -10,16 +11,19 @@ import { ModalBienvenidoPage } from '../modal-bienvenido/modal-bienvenido.page';
 })
 export class ParquePage implements OnInit {
 
-  constructor(public modalController: ModalController) {}
+  constructor(public alertController: AlertController) {}
 
    
 
   async ngOnInit() {
-    const modal = await this.modalController.create({
-      component:ModalBienvenidoPage,
-      componentProps: { value: 123 }
+    const alert = await this.alertController.create({
+      header: 'Bienvenido',
+      subHeader: 'Subtitle',
+      message: 'This is an alert message.',
+      buttons: ['Siguiente']
     });
-    return await modal.present();
+
+    await alert.present();
   }
 locali:string;
 
@@ -53,7 +57,5 @@ parques=[
   },
 ]
 
-async busquedalocalidad(){
-   
-  }
+
 }

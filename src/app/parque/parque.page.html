@@ -16,12 +16,9 @@
   
   
   <!-- Searchbar with a cancel button and custom cancel button text -->
-  <ion-searchbar showCancelButton cancelButtonText="Custom Cancel"
-  [(ngModel)]="localidad" (ionChange)="busquedalocalidad()">
-
-
-  </ion-searchbar>
-  <ion-list  class="list list-md hydrated" *ngFor="let par of parques; let i = index">
+  <ion-searchbar showCancelButton cancelButtonText="Custom Cancel"></ion-searchbar>
+  
+ <ion-list  class="list list-md hydrated" *ngFor="let par of parques; let i = index">
     <div class="item-note" >
       {{par.localidad}}
     </div>
